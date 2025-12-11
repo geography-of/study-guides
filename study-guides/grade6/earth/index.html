@@ -46,6 +46,217 @@
       color: #102a43;
       text-transform: uppercase;
       letter-spacing: 1px;
+      line-height: 1.2;
+    }
+
+    .main-header p {
+      font-size: 1.1rem;
+      color: #627d98;
+      font-weight: 300;
+    }
+
+    /* Section Styles */
+    .card-section {
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      margin-bottom: 40px;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      page-break-inside: avoid;
+    }
+
+    .section-title {
+      border-bottom: 3px solid #eee;
+      padding-bottom: 15px;
+      margin-bottom: 30px;
+    }
+
+    .section-title h2 {
+      margin: 0;
+      font-size: 2rem;
+      font-weight: 800;
+    }
+
+    /* Specific Coloring */
+    .rotation { border-top: 8px solid var(--rotation-color); }
+    .rotation .section-title h2 { color: var(--rotation-color); }
+    .rotation .number { background-color: var(--rotation-color); }
+
+    .revolution { border-top: 8px solid var(--revolution-color); }
+    .revolution .section-title h2 { color: var(--revolution-color); }
+    .revolution .number { background-color: var(--revolution-color); }
+
+    /* Card Layout */
+    .fact-card {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 30px;
+      padding: 20px;
+      border-radius: 12px;
+      transition: all 0.2s ease;
+      background-color: #fff;
+    }
+
+    .rotation .fact-card:nth-child(even) { background-color: #f7fafc; }
+    .revolution .fact-card:nth-child(even) { background-color: #fffaf0; }
+
+    .number {
+      flex-shrink: 0;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      color: white;
+      font-weight: 800;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 25px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .content { width: 100%; }
+    .content h3 { margin: 0 0 8px 0; font-size: 1.3rem; color: #243b53; }
+    .content p { margin: 0; font-size: 1rem; color: #486581; text-align: justify; }
+    .content ul { margin: 10px 0 0 0; padding-left: 20px; font-size: 0.95rem; color: #486581; }
+    .content li { margin-bottom: 5px; }
+    strong { color: #102a43; font-weight: 700; }
+    
+    /* Helper for images */
+    .diagram-placeholder {
+        margin: 20px 0;
+        text-align: center;
+    }
+    
+    img { max-width: 100%; height: auto; border-radius: 8px; }
+
+    /* RESPONSIVENESS FIXES */
+    @media (max-width: 768px) {
+        body {
+            padding: 15px; /* Reduce outer padding */
+        }
+        
+        .main-header {
+            margin-bottom: 25px;
+        }
+
+        .main-header h1 {
+            font-size: 1.8rem; /* Smaller Title */
+        }
+        
+        .card-section {
+            padding: 20px; /* Reduce internal card padding */
+            border-radius: 12px;
+        }
+        
+        .fact-card {
+            padding: 15px;
+            flex-direction: column; /* Stack number and content on very small screens? No, lets keep row but tighten it */
+            flex-direction: row; 
+        }
+        
+        .number {
+            width: 35px; /* Smaller bubble */
+            height: 35px;
+            font-size: 1rem;
+            margin-right: 15px;
+        }
+        
+        .section-title h2 {
+            font-size: 1.5rem;
+        }
+        
+        .content h3 {
+            font-size: 1.1rem;
+        }
+        
+        .content p {
+            text-align: left; /* Justify looks bad on mobile usually */
+            font-size: 0.95rem;
+        }
+    }
+
+    /* PRINT OPTIMIZATION */
+    @media print {
+        body { background-color: white; padding: 0; }
+        .container { width: 100%; max-width: 100%; }
+        .card-section { box-shadow: none; border: 1px solid #ddd; margin-bottom: 20px; padding: 20px; }
+        .fact-card { 
+            break-inside: avoid; 
+            background-color: transparent !important; 
+            border-bottom: 1px solid #eee; 
+            margin-bottom: 15px; 
+            padding: 0 0 15px 0; 
+        }
+        .main-header h1 { font-size: 2rem; }
+        .fact-card:last-child { border-bottom: none; }
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <header class="main-header">
+    <h1>Earth in Motion 🌍</h1>
+    <p>Detailed Study Guide | Grade 6 Geography</p>
+  </header>
+
+  <section class="card-section rotation">
+    <div class="section-title">
+      <h2>1. Earth's Rotation</h2>
+    </div>
+    
+    <div class="fact-card">
+      <div class="number">1</div>
+      <div class="content">
+        <h3>24 Hours</h3><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Earth in Motion - Detailed Study Sheet</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
+
+    :root {
+      --bg-color: #f0f4f8;
+      --text-color: #334e68;
+      --rotation-color: #38b2ac; /* Teal */
+      --rotation-bg: #e6fffa;
+      --revolution-color: #ed8936; /* Orange */
+      --revolution-bg: #fffaf0;
+      --card-bg: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      margin: 0;
+      padding: 40px;
+      line-height: 1.6;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .main-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .main-header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 5px;
+      color: #102a43;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
     .main-header p {
@@ -121,6 +332,52 @@
     .content li { margin-bottom: 5px; }
     strong { color: #102a43; font-weight: 700; }
 
+    /* --- RESPONSIVENESS FIXES START HERE --- */
+    @media (max-width: 768px) {
+        body {
+            padding: 15px; /* Reduce outer padding on mobile */
+        }
+        
+        .main-header {
+            margin-bottom: 25px;
+        }
+
+        .main-header h1 {
+            font-size: 1.8rem; /* Smaller Title */
+        }
+        
+        .card-section {
+            padding: 20px; /* Reduce internal card padding */
+            border-radius: 12px;
+        }
+        
+        .fact-card {
+            padding: 15px;
+            /* Keep flex-direction row, but adjust spacing */
+        }
+        
+        .number {
+            width: 35px; /* Smaller bubble */
+            height: 35px;
+            font-size: 1rem;
+            margin-right: 15px;
+        }
+        
+        .section-title h2 {
+            font-size: 1.5rem;
+        }
+        
+        .content h3 {
+            font-size: 1.1rem;
+        }
+        
+        .content p {
+            text-align: left; /* Justify is hard to read on narrow screens */
+            font-size: 0.95rem;
+        }
+    }
+    /* --- RESPONSIVENESS FIXES END HERE --- */
+
     /* PRINT OPTIMIZATION */
     @media print {
         body { background-color: white; padding: 0; }
@@ -175,7 +432,7 @@
       </div>
     </div>
 
-<div class="fact-card">
+    <div class="fact-card">
       <div class="number">4</div>
       <div class="content">
         <h3>Sun Time vs. Standard Time</h3>
@@ -189,7 +446,7 @@
       </div>
     </div>
     
-        <div class="fact-card">
+    <div class="fact-card">
       <div class="number">5</div>
       <div class="content">
         <h3>Time Zones & The Date Line</h3>
@@ -200,6 +457,7 @@
         <strong>International Date Line:</strong> There is an imaginary line in the Pacific Ocean (180&deg; meridian). If you cross it traveling West, you instantly jump forward to the next day!</p>
       </div>
     </div>
+  </section> 
 
   <section class="card-section revolution">
     <div class="section-title">
@@ -246,6 +504,123 @@
         </ul>
       </div>
     </div>
+
+    <div class="fact-card">
+      <div class="number">10</div>
+      <div class="content">
+        <h3>Distance Changes</h3>
+        
+        <p>Earth's orbit is not a perfect circle, so our distance from the Sun changes.
+        <br><br>
+        Surprisingly, Earth is <strong>closest</strong> to the Sun in January (called Perihelion — you don't need to remember this name) and <strong>furthest</strong> away in July (called Aphelion — no need to memorize either). This proves that seasons are caused by the <em>tilt</em> of the Earth, not by how close we are to the Sun!</p>
+      </div>
+    </div>
+  </section>
+  
+</div>
+
+</body>
+</html>
+        <p>Earth spins around its own axis from West to East. One full turn takes roughly <strong>24 hours</strong>. We call this period a day. This rotation sets the biological rhythm for almost all life on Earth.</p>
+      </div>
+    </div>
+
+    <div class="fact-card">
+      <div class="number">2</div>
+      <div class="content">
+        <h3>Day and Night</h3>
+        <p>Rotation is the direct cause of the day/night cycle. At any moment, the Sun illuminates only half of the Earth (Day), while the other half remains in shadow (Night).</p>
+      </div>
+    </div>
+    
+    
+
+[Image of diagram Earth rotation axis day and night]
+
+
+    <div class="fact-card">
+      <div class="number">3</div>
+      <div class="content">
+        <h3>Apparent Motion</h3>
+        <p>Because Earth spins toward the East, celestial bodies (Sun, Moon, stars) appear to move from <strong>East to West</strong>. This is an optical illusion; we are the ones moving, not the sky.</p>
+      </div>
+    </div>
+
+    <div class="fact-card">
+      <div class="number">4</div>
+      <div class="content">
+        <h3>Sun Time vs. Standard Time</h3>
+        <p>Did you know that when your watch says 12:00, it might not be <em>real</em> noon? 
+        <br><br>
+        <strong>Sun Time (Local Time):</strong> This is nature's time. Noon happens exactly when the Sun is at its highest point in the sky. Because the Earth is curved, this time is slightly different for every single line of longitude.
+        <br><br>
+        <strong>Standard Time (Zone Time):</strong> To make travel easier, huge regions agree to use the same time.
+        <br><br>
+        <strong>Example:</strong> In Poland (Time Zone UTC+1), when the clock says 12:00 PM, the "real" Sun Time in Warsaw is actually 12:24 PM!</p>
+      </div>
+    </div>
+    
+    <div class="fact-card">
+      <div class="number">5</div>
+      <div class="content">
+        <h3>Time Zones & The Date Line</h3>
+        <p>Earth spins 15&deg; every hour, creating different times across the globe.
+        <br><br>
+        <strong>Examples:</strong> When it is 12:00 PM (Noon) in <strong>London</strong>, it is already 1:00 PM in <strong>Warsaw</strong>, but only 7:00 AM in <strong>New York</strong>.
+        <br><br>
+        <strong>International Date Line:</strong> There is an imaginary line in the Pacific Ocean (180&deg; meridian). If you cross it traveling West, you instantly jump forward to the next day!</p>
+      </div>
+    </div>
+  </section> <section class="card-section revolution">
+    <div class="section-title">
+      <h2>2. Earth's Revolution</h2>
+    </div>
+
+    <div class="fact-card">
+      <div class="number">6</div>
+      <div class="content">
+        <h3>365 Days + 6 Hours</h3>
+        <p>Earth orbits the Sun in an elliptical path. One full lap takes <strong>365 days, 5 hours, and 49 minutes</strong>. Every 4 years, we add these hours up (4 &times; 6h = 24h) to add an extra day (Feb 29), creating a <strong>Leap Year</strong>.</p>
+      </div>
+    </div>
+
+    <div class="fact-card">
+      <div class="number">7</div>
+      <div class="content">
+        <h3>Fixed Axial Tilt</h3>
+        <p>Earth's axis is tilted at an angle of <strong>66&deg;33'</strong> relative to its orbit. Crucially, the axis always points the same way in space (toward the North Star, Polaris). This constant tilt is the main cause of seasons.</p>
+      </div>
+    </div>
+
+    <div class="fact-card">
+      <div class="number">8</div>
+      <div class="content">
+        <h3>Sun's Height (Altitude) & Shadows</h3>
+        <p>The tilt causes the Sun's height in the sky to change throughout the year:</p>
+        <ul>
+          <li><strong>Summer:</strong> Sun is high. Rays are concentrated (hot). Shadows are short.</li>
+          <li><strong>Winter:</strong> Sun is low. Rays are spread out (cold). Shadows are long.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="fact-card">
+      <div class="number">9</div>
+      <div class="content">
+        <h3>The 4 Key Dates</h3>
+        <ul>
+          <li><strong>Mar 21 (Spring Equinox):</strong> Sun over Equator. Day = Night everywhere.</li>
+          <li><strong>Jun 22 (Summer Solstice):</strong> Sun over <em>Tropic of Cancer</em>. Longest day in North.</li>
+          <li><strong>Sep 23 (Autumn Equinox):</strong> Sun over Equator. Day and Night duration is equal everywhere.</li>
+          <li><strong>Dec 22 (Winter Solstice):</strong> Sun over <em>Tropic of Capricorn</em>. Shortest day in North.</li>
+        </ul>
+      </div>
+    </div>
+    
+    
+
+[Image of diagram earth seasons revolution solstices and equinoxes]
+
 
     <div class="fact-card">
       <div class="number">10</div>
